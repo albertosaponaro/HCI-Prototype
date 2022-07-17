@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ePaper - HiFi Prototype - Saponaro & Vaeth</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">ePapers</a>
+
+        <!-- Notification Button -->
+        <button type="button" class="btn border-0" data-bs-toggle="modal" data-bs-target="#notifications">
+          <img src="assets/img/bell-fill.svg" alt="bell-fill" width="24" height="24">
+          <span id="notificationsBadge" class="visually-hidden position-absolute translate-middle p-2 bg-danger border border-light rounded-circle"></span>
+        </button>
+
+      </div>
+    </nav>
+
+    <!-- Notification Center Modal -->
+    <div class="modal fade" id="notifications" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Notifications</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div id="notificationBody" class="modal-body"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Loop -->
+    <div id="mainLoop" class="d-flex flex-column m-3"></div>
+
+
+    <!--Add New Paper Button-->
+    <div class="text-center fixed-bottom"> 
+        <button type="button" class="btn btn-dark btn-lg mb-3 shadow rounded-pill" data-bs-toggle="modal" data-bs-target="#addNewPaperModal">+ new paper</button>
+    </div>
+
+    <!-- Add New Paper Modal -->
+    <div class="modal fade" data-bs-backdrop="static" id="addNewPaperModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-sm-down">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add new paper</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <!--Name of the Paper-->
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" aria-describedby="">
+                <!--Author-->
+                <label for="author" class="form-label">Author</label>
+                <input type="text" class="form-control" id="author" aria-describedby="">
+                <!--Institute-->
+                <label for="institute" class="form-label">Institute</label>
+                <input type="text" class="form-control" id="institute" aria-describedby="">
+                <!--Publication Date-->
+                <label for="pubDate" class="form-label">Publication Date</label>
+                <input type="date" class="form-control" id="pubDate" aria-describedby="">
+              </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+            <button id="addPaperButton" type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Add Paper</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="database.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
